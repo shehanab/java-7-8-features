@@ -13,16 +13,20 @@ public class ResourceManagement {
 
     private Connection connection;
 
+    private static final String sql = "SELECT * FROM my_table where a=?";
+
     public void doSomething() throws SQLException, MyException {
-//        A SQL statement is precompiled and stored in a PreparedStatement object. This object can then be used to efficiently execute this statement multiple times.
-        try {
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM my_table where a=?");
+//        All classes implementing java.lang.AutoCloseabl interface can be used inside the try-with-resources construct.
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+//            PreparedStatement speeds up query execution, by decreasing the parsing and query planning overhead of each execution.
             statement.setString(1, "Test");
 //            statement.setBigDecimal(1, BigDecimal.valueOf(153833.00));
 //            statement.setInt(2, 110592);
             ResultSet resultSet = statement.executeQuery();
             doSomethingWithResultSet(resultSet);
             resultSet.close();
+        } catch (SQLException e) {
+            throw e;
         } catch (Exception e) {
             throw e;
         }
