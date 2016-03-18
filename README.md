@@ -9,8 +9,7 @@
 - TypeInference
 
 # Java 8 features
-
-
+- Date time api
 
 # Test Driven development with
 - Mokito

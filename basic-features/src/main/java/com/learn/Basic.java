@@ -1,4 +1,4 @@
-package com.learn.java;
+package com.learn;
 
 /**
  * Created by shehan on 3/16/16.

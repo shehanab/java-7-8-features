@@ -9,8 +9,8 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>basic-features</artifactId>
+    <groupId>com.learn</groupId>
+    <artifactId>date-time-api</artifactId>
     <version>1.0-SNAPSHOT</version>
-
 
 </project>

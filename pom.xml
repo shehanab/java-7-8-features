@@ -10,6 +10,7 @@
 
     <modules>
         <module>basic-features</module>
+        <module>date-time-api</module>
     </modules>
 
     <dependencies>

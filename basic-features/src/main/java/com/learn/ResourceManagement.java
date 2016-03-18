@@ -1,4 +1,4 @@
-package com.learn.java;
+package com.learn;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
