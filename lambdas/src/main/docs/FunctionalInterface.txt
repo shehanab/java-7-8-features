@@ -1,0 +1,18 @@
+Naming convention.
+==================
+
+Based on number of parameters.
+
+ 0 - Runnable/ Supplier
+ 1 - <function>
+ 2 - Bi<function>
+ 
+Based on single Parameter
+
+ int - Int<function>
+ long - Long<function>
+ double - Double<function>
+ object - <function>
+ 
+ 
+ 

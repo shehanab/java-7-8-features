@@ -12,6 +12,8 @@
         <module>basic-features</module>
         <module>date-time-api</module>
         <module>file-api</module>
+        <module>lambdas</module>
+        <module>lambda-examples</module>
     </modules>
 
     <dependencies>
