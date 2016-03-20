@@ -14,6 +14,9 @@
         <module>file-api</module>
         <module>lambdas</module>
         <module>lambda-examples</module>
+        <module>stream-api</module>
+        <module>stream-example</module>
+        <module>stream-example-2</module>
     </modules>
 
     <dependencies>
