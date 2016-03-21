@@ -24,6 +24,14 @@ public class BasicTest extends TestCase {
 
     }
 
+    public void unsignedArithmatic() throws Exception {
+        System.out.println(Integer.divideUnsigned(Integer.parseUnsignedInt("2147483800"), 10));
+
+        System.out.println(Integer.compareUnsigned(Integer.parseUnsignedInt("2147483800"), 10));
+
+        System.out.println(Long.remainderUnsigned(Long.parseUnsignedLong("214748380000"), 3));
+    }
+
     public void testStringSwitch() throws Exception {
 
         String str = "Java";
