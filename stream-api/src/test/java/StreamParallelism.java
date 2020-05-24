@@ -5,9 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toList;
 
 /**
  * Created by Shehan on 5/27/15.
@@ -18,8 +17,8 @@ public class StreamParallelism {
 
     @Before
     public void setUp() throws Exception {
-        String file = getClass().getClassLoader().getResource("test.txt").getFile();
-        stream = Files.lines(Paths.get(file));
+        String file = Objects.requireNonNull(getClass().getClassLoader().getResource("test.txt")).getFile();
+        stream = Files.lines(Paths.get("D:/personal/apps/java-7-8-features/stream-api/target/classes/test.txt"));
     }
 
     @Test
@@ -27,14 +26,13 @@ public class StreamParallelism {
         List<String> strings = new ArrayList<>();
         Stream<String> sequencialStream = strings.stream();
         Stream<String> parallelStream = strings.parallelStream();
-        logTime(
-                () -> parallelStream.map(this::doToString).forEach(value -> {
-                }),
-                "Parallel");
-        
-        logTime(
-                () -> sequencialStream.map(this::doToString).forEach(value -> {}),
-                "Sequential");
+        logTime(() -> parallelStream
+                .map(this::doToString)
+                .forEach(value -> {}), "Parallel");
+
+        logTime(() -> sequencialStream
+                .map(this::doToString)
+                .forEach(value -> {}), "Sequential");
     }
 
     private String doToString(String source) {

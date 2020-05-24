@@ -6,6 +6,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -19,7 +20,7 @@ public class StreamCreationTest {
 
         List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         LocalDateTime start = LocalDateTime.now();
-        integers.stream().forEach(System.out::println);
+        integers.forEach(System.out::println);
         LocalDateTime end = LocalDateTime.now();
         System.out.println(Duration.between(start, end));
 
@@ -46,7 +47,8 @@ public class StreamCreationTest {
 
     @Test
     public void testCreateFromFile() throws Exception {
-        String file = getClass().getClassLoader().getResource("test.txt").getFile();
+        // String file = getClass().getClassLoader().getResource("test.txt").getFile();
+        String file = Objects.requireNonNull(getClass().getClassLoader().getResource("test.txt")).getFile();
         Stream<String> lines = Files.lines(Paths.get(file));
         lines.forEach(System.out::println);
     }

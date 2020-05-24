@@ -38,8 +38,8 @@ public class StreamConsumeTest {
         System.out.println("Count : " + collected.stream().count());
         System.out.println("First : " + collected.stream().findFirst());
         System.out.println("Any : " + collected.stream().findAny());
-        System.out.println("Max : " + collected.stream().max(Comparator.<Integer>naturalOrder()));
-        System.out.println("Min : " + collected.stream().min(Comparator.<Integer>naturalOrder()));
+        System.out.println("Max : " + collected.stream().max(Comparator.naturalOrder()));
+        System.out.println("Min : " + collected.stream().min(Comparator.naturalOrder()));
         System.out.println("Any negative : " + collected.stream().anyMatch(integer -> integer < 0));
         System.out.println("Any above 99 : " + collected.stream().anyMatch(integer -> integer > 99));
         System.out.println("All positive : " + collected.stream().allMatch(integer -> integer > 0));

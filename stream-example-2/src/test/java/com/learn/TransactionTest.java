@@ -33,7 +33,7 @@ public class TransactionTest {
 
     @Test
     public void testReadAll() throws Exception {
-        transactions.stream().forEach(System.out::println);
+        transactions.forEach(System.out::println);
     }
 
     @Test
@@ -52,18 +52,19 @@ public class TransactionTest {
         String msisdn = "(073)0300190";
 
         Optional<Transaction> transaction = transactions.stream()
-                .filter(t -> t.getFrom().equals(msisdn)).findAny();
+                .filter(t -> msisdn.equals(t.getFrom())).findAny();
 
-        String msg = transaction.map(convert("Found"))
+        String msg = transaction
+                .map(convert("Found"))
                 .orElseGet(() -> "Transaction not found for msisdn " + msisdn);
 
         System.out.println(msg);
-//        String message = transaction
-//                .map(convert("Found"))
-//                .orElse("No Transaction Found");
-//
-//        System.out.println(message);
-////        System.out.println(transaction);
+        String message = transaction
+                .map(convert("Found"))
+                .orElse("No Transaction Found");
+
+        System.out.println(message);
+        System.out.println(transaction);
     }
 
     private Function<Transaction, String> convert(String prefix) {
