@@ -14,15 +14,14 @@ public class WatchDirectory implements Runnable, Closeable {
     private WatchService watchService;
     private Path dir;
 
-    @SuppressWarnings("unchecked")
-    static <T> WatchEvent<T> cast(WatchEvent<?> event) {
-        return (WatchEvent<T>)event;
-    }
-
     public WatchDirectory(Path dir) {
         this.dir = dir;
     }
 
+    @SuppressWarnings("unchecked")
+    static <T> WatchEvent<T> cast(WatchEvent<?> event) {
+        return (WatchEvent<T>) event;
+    }
 
     public void init() throws IOException {
         watchService = FileSystems.getDefault().newWatchService();
@@ -32,7 +31,7 @@ public class WatchDirectory implements Runnable, Closeable {
 
     @Override
     public void run() {
-        for (;;) {
+        for (; ; ) {
             WatchKey key;
             try {
                 key = watchService.take();

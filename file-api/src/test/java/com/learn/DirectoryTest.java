@@ -24,12 +24,12 @@ public class DirectoryTest {
         resourceDirectory = path.getParent().toString();
 
     }
-    
+
     @Test
     public void testCreateDirectory() throws Exception {
 
-        Files.deleteIfExists(Paths.get(resourceDirectory , "test-dir"));
-        Files.createDirectory(Paths.get(resourceDirectory , "test-dir"));
+        Files.deleteIfExists(Paths.get(resourceDirectory, "test-dir"));
+        Files.createDirectory(Paths.get(resourceDirectory, "test-dir"));
 
     }
 

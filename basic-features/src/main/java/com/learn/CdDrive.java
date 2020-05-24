@@ -5,11 +5,11 @@ package com.learn;
  */
 public interface CdDrive {
 
-    default void write(String s) {
-        System.out.println("CD Drive : " + s);
-    }
-
     static boolean isNull(Object o) {
         return o == null;
+    }
+
+    default void write(String s) {
+        System.out.println("CD Drive : " + s);
     }
 }

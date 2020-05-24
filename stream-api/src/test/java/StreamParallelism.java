@@ -28,11 +28,13 @@ public class StreamParallelism {
         Stream<String> parallelStream = strings.parallelStream();
         logTime(() -> parallelStream
                 .map(this::doToString)
-                .forEach(value -> {}), "Parallel");
+                .forEach(value -> {
+                }), "Parallel");
 
         logTime(() -> sequencialStream
                 .map(this::doToString)
-                .forEach(value -> {}), "Sequential");
+                .forEach(value -> {
+                }), "Sequential");
     }
 
     private String doToString(String source) {

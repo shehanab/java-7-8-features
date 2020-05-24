@@ -3,7 +3,7 @@ package com.learn;
 import junit.framework.TestCase;
 import org.junit.Test;
 
-public class InterfaceTest extends TestCase{
+public class InterfaceTest extends TestCase {
 
     @Test
     public void testWrite() throws Exception {

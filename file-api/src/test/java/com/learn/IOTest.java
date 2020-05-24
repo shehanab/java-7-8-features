@@ -9,8 +9,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by Shehan on 5/13/15.
  */
@@ -29,19 +27,19 @@ public class IOTest {
 
     @Test
     public void testReadFile() throws Exception {
-        try (FileReader fileReader = new FileReader(resourceDirectory + "/Test.txt")){
+        try (FileReader fileReader = new FileReader(resourceDirectory + "/Test.txt")) {
             int c;
             while ((c = fileReader.read()) != -1) {
-                System.out.print((char)c);
+                System.out.print((char) c);
             }
         }
     }
 
     @Test
     public void testReadFile2() throws Exception {
-        try (FileReader fileReader = new FileReader(resourceDirectory + "/Test.txt")){
+        try (FileReader fileReader = new FileReader(resourceDirectory + "/Test.txt")) {
             for (int c = fileReader.read(); c != -1; c = fileReader.read()) {
-                System.out.print((char)c);
+                System.out.print((char) c);
             }
         }
     }
@@ -80,7 +78,7 @@ public class IOTest {
 
         try (FileReader fileReader = new FileReader(resourceDirectory + "/Test.txt");
              BufferedReader bufferedReader = new BufferedReader(fileReader);
-             Scanner scanner = new Scanner(bufferedReader)){
+             Scanner scanner = new Scanner(bufferedReader)) {
             while (scanner.hasNext()) {
                 System.out.println(scanner.next());
             }
@@ -93,7 +91,7 @@ public class IOTest {
 
         try (FileReader fileReader = new FileReader(resourceDirectory + "/Test3.txt");
              BufferedReader bufferedReader = new BufferedReader(fileReader);
-             Scanner scanner = new Scanner(bufferedReader)){
+             Scanner scanner = new Scanner(bufferedReader)) {
 
             Double result = 0D;
             while (scanner.hasNext()) {

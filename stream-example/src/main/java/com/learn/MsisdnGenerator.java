@@ -1,6 +1,7 @@
 package com.learn;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
@@ -10,10 +11,10 @@ import java.util.stream.Stream;
  */
 public class MsisdnGenerator {
 
+    public static final int MSISDN_LENGTH = 11;
     private static final String NUMBER_PATTERN = "^[0-9]+$";
     private static final String RANGE_PATTERN = "^[0-9]+-[0-9]+";
     private static final String WILDCARD_PATTERN = "[0-9]+\\*";
-    public static final int MSISDN_LENGTH = 11;
     private List<String> pattern;
 
     public MsisdnGenerator(String pattern) {

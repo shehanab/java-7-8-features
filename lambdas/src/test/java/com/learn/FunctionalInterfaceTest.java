@@ -2,11 +2,7 @@ package com.learn;
 
 import org.junit.Test;
 
-import java.util.Comparator;
-import java.util.Optional;
 import java.util.function.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Created by Shehan on 5/18/15.
@@ -16,7 +12,7 @@ public class FunctionalInterfaceTest {
     @Test
     public void testFunctionComposition() throws Exception {
 
-        Function<Integer,String> convert = String::valueOf;
+        Function<Integer, String> convert = String::valueOf;
         Function<String, String> addColon = s -> s + ":";
 
         Function<Integer, String> function = convert.andThen(addColon);
@@ -30,7 +26,8 @@ public class FunctionalInterfaceTest {
     public void testTypes() throws Exception {
         Supplier<String> supplier = () -> "";
         Function<String, String> function = (s) -> s;
-        Consumer<String> consumer = (s) ->{};
+        Consumer<String> consumer = (s) -> {
+        };
         Predicate<String> predicate = s -> Boolean.FALSE;
     }
 

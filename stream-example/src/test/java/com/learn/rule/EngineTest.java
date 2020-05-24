@@ -1,8 +1,5 @@
 package com.learn.rule;
 
-import com.learn.rule.Engine;
-import com.learn.rule.Message;
-import com.learn.rule.Rule;
 import org.junit.Before;
 import org.junit.Test;
 

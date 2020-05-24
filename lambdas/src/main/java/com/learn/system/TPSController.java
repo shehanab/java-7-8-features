@@ -9,7 +9,7 @@ public class TPSController {
 
     public boolean isAllowed(Request request) {
         boolean allowed = request.getRequestId() % 2 == 0;
-        System.out.println("Request is " + (allowed ? "" : "Not ") +"Allowed to continue");
+        System.out.println("Request is " + (allowed ? "" : "Not ") + "Allowed to continue");
         return allowed;
     }
 

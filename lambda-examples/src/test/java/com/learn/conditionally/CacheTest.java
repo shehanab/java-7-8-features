@@ -19,7 +19,7 @@ public class CacheTest {
     public void testCalculateFibonacci() throws Exception {
         for (int i = 0; i < 20; i++) {
 
-            Integer value = cache.getOrCalculate(i,this::calculateNext);
+            Integer value = cache.getOrCalculate(i, this::calculateNext);
 
             System.out.println(value);
         }

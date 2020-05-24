@@ -1,11 +1,11 @@
 package com.learn;
 
-import com.learn.WatchDirectory;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.net.URL;
-import java.nio.file.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 

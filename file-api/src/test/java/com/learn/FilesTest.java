@@ -3,14 +3,12 @@ package com.learn;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.nio.file.attribute.FileAttribute;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -35,9 +33,9 @@ public class FilesTest {
     public void testFileExists() throws Exception {
 
         assertTrue(Files.exists(Paths.get(resourceDirectory)));
-        assertTrue(Files.exists(Paths.get(resourceDirectory , "Test.txt")));
-        assertFalse(Files.exists(Paths.get(resourceDirectory , "Test.a")));
-        assertTrue(Files.isSameFile(Paths.get(resourceDirectory , "Test.txt"), Paths.get(resourceDirectory , "./Test.txt")));
+        assertTrue(Files.exists(Paths.get(resourceDirectory, "Test.txt")));
+        assertFalse(Files.exists(Paths.get(resourceDirectory, "Test.a")));
+        assertTrue(Files.isSameFile(Paths.get(resourceDirectory, "Test.txt"), Paths.get(resourceDirectory, "./Test.txt")));
     }
 
     @Test
@@ -45,7 +43,7 @@ public class FilesTest {
 
         Path source = null;
         try {
-            source = Paths.get(resourceDirectory , "fileForDelete.a");
+            source = Paths.get(resourceDirectory, "fileForDelete.a");
             Files.createFile(source);
             assertTrue(Files.exists(source));
             Files.delete(source);
@@ -64,8 +62,8 @@ public class FilesTest {
     @Test
     public void testFileCopy() throws Exception {
 
-        Path source = Paths.get(resourceDirectory , "fileForMove.a");
-        Path target = Paths.get(resourceDirectory , "../fileForMove.a");
+        Path source = Paths.get(resourceDirectory, "fileForMove.a");
+        Path target = Paths.get(resourceDirectory, "../fileForMove.a");
         try {
             Files.createFile(source);
             assertTrue(Files.exists(source));
@@ -85,8 +83,8 @@ public class FilesTest {
     @Test
     public void testFileMove() throws Exception {
 
-        Path source = Paths.get(resourceDirectory , "fileForMove.a");
-        Path target = Paths.get(resourceDirectory , "../fileForMove.a");
+        Path source = Paths.get(resourceDirectory, "fileForMove.a");
+        Path target = Paths.get(resourceDirectory, "../fileForMove.a");
         try {
             Files.createFile(source);
             assertTrue(Files.exists(source));
@@ -107,7 +105,7 @@ public class FilesTest {
     public void testFileMeta() throws Exception {
 
         assertTrue(Files.isDirectory(Paths.get(resourceDirectory)));
-        Path testFilePath = Paths.get(resourceDirectory , "Test.txt");
+        Path testFilePath = Paths.get(resourceDirectory, "Test.txt");
         assertFalse(Files.isDirectory(testFilePath));
         System.out.println("File size : " + Files.size(testFilePath));
         System.out.println("Is regular file : " + Files.isRegularFile(testFilePath));
@@ -121,7 +119,7 @@ public class FilesTest {
 
     @Test
     public void testReadAttributes() throws Exception {
-        BasicFileAttributes attr = Files.readAttributes(Paths.get(resourceDirectory , "Test.txt"), BasicFileAttributes.class);
+        BasicFileAttributes attr = Files.readAttributes(Paths.get(resourceDirectory, "Test.txt"), BasicFileAttributes.class);
 
         System.out.println("creationTime: " + attr.creationTime());
         System.out.println("lastAccessTime: " + attr.lastAccessTime());
@@ -137,7 +135,7 @@ public class FilesTest {
     @Test
     public void testFileStore() throws Exception {
 
-        FileStore fileStore = Files.getFileStore(Paths.get(resourceDirectory , "Test.txt"));
+        FileStore fileStore = Files.getFileStore(Paths.get(resourceDirectory, "Test.txt"));
         System.out.println("Store name : " + fileStore.name());
         System.out.println("Total space : " + fileStore.getTotalSpace());
         System.out.println("Usable space : " + fileStore.getUsableSpace());
@@ -148,7 +146,7 @@ public class FilesTest {
     @Test
     public void testRAF() throws Exception {
 
-        Path path = Paths.get(resourceDirectory , "Test4.txt");
+        Path path = Paths.get(resourceDirectory, "Test4.txt");
         Files.deleteIfExists(path);
         Files.createFile(path);
         try (FileChannel fc = FileChannel.open(path, StandardOpenOption.READ, StandardOpenOption.WRITE)) {

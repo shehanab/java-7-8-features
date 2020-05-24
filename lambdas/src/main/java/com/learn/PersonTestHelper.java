@@ -14,7 +14,7 @@ public class PersonTestHelper {
         this.people = people;
     }
 
-    public List<Person> searchBy(SearchCriteria searchCriteria){
+    public List<Person> searchBy(SearchCriteria searchCriteria) {
         ArrayList<Person> result = new ArrayList<>();
         for (Person person : people) {
             if (searchCriteria.search(person.getName(), person.getAge(), person.getPhone())) {

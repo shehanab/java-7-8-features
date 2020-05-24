@@ -12,7 +12,7 @@ public class BasicTest extends TestCase {
         long LONG = 10_000_000;
         byte b = (byte) 0b1_001_0001;
 
-        int i =  076;
+        int i = 076;
         System.out.println(LONG);
         System.out.println(b);
         System.out.println(i);
@@ -37,13 +37,13 @@ public class BasicTest extends TestCase {
         String str = "Java";
 
         switch (str) {
-            case "Java" :
+            case "Java":
                 System.out.println("The language is java");
                 break;
-            case "Scala" :
+            case "Scala":
                 System.out.println("The language is scala");
                 break;
-            case "Rubi" :
+            case "Rubi":
                 System.out.println("The language is rubi");
                 break;
             default:
@@ -53,7 +53,7 @@ public class BasicTest extends TestCase {
 
     public void testVarArgs() throws Exception {
 //        varargMethod(1,2,3,4,5);
-        Integer[] integers = {1,2,3,4,5};
+        Integer[] integers = {1, 2, 3, 4, 5};
         varargMethod(0, integers);
 
     }

@@ -56,6 +56,6 @@ public class PersonTestHelperTest {
 
     private PersonTestHelper.SearchCriteria2 filterByPerson(int maxAge) {
         return person -> person.getPhone().startsWith("+9477")
-                        && person.getAge() < maxAge;
+                && person.getAge() < maxAge;
     }
 }

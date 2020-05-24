@@ -3,7 +3,6 @@ import org.junit.Test;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
@@ -58,7 +57,8 @@ public class StreamTransformationTest {
     public void testPeek() throws Exception {
 
         stream.peek(integer -> System.out.println("value : " + integer))
-                .forEach(integer1 -> {});
+                .forEach(integer1 -> {
+                });
 
     }
 

@@ -60,7 +60,6 @@ public class LambdaTest {
     }
 
 
-
     @Test
     public void testMethodReference() throws Exception {
         helper.iterateAndPrint2(Object::toString);

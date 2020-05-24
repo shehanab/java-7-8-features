@@ -1,6 +1,5 @@
 package com.learn.cdr;
 
-import com.learn.cdr.CDRFile;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -81,8 +80,6 @@ public class CDRFileTest {
     /**
      * Collection session ids.
      * Group by session id.
-     *
-     *
      *
      * @throws Exception
      */

@@ -4,7 +4,10 @@ import org.apache.commons.dbutils.ResultSetIterator;
 import org.h2.tools.DeleteDbFiles;
 import org.junit.Test;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Arrays;
 import java.util.Spliterators;
 import java.util.stream.Stream;
@@ -24,8 +27,8 @@ public class DBAsStreamTest {
         DeleteDbFiles.execute("~", "test", true);
 
         Class.forName("org.h2.Driver");
-        try(Connection connection = DriverManager.getConnection("jdbc:h2:~/test");
-            Statement statement = connection.createStatement()) {
+        try (Connection connection = DriverManager.getConnection("jdbc:h2:~/test");
+             Statement statement = connection.createStatement()) {
 
             statement.execute("create table test(id int primary key, name varchar(255))");
             statement.execute("insert into test values(1, 'Hello')");

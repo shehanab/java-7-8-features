@@ -1,6 +1,5 @@
 package com.learn;
 
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,9 +10,8 @@ import java.sql.SQLException;
  */
 public class ResourceManagement {
 
-    private Connection connection;
-
     private static final String sql = "SELECT * FROM my_table where a=?";
+    private Connection connection;
 
     public void doSomething() throws SQLException, MyException {
 //        All classes implementing java.lang.AutoCloseabl interface can be used inside the try-with-resources construct.

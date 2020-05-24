@@ -1,7 +1,5 @@
 package hms.learn.custom;
 
-import java.lang.annotation.*;
-
 /**
  * Created by Shehan on 6/3/15.
  */

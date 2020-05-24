@@ -27,6 +27,6 @@ public class OptionalTest {
         if (b == 0) {
             return OptionalDouble.empty();
         }
-        return OptionalDouble.of(a / (double)b);
+        return OptionalDouble.of(a / (double) b);
     }
 }

@@ -1,6 +1,5 @@
 package com.learn;
 
-import com.learn.MsisdnGenerator;
 import org.junit.Test;
 
 import java.util.PrimitiveIterator;

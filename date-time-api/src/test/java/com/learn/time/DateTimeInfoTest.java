@@ -4,10 +4,7 @@ import org.junit.Test;
 
 import java.time.*;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by Shehan on 6/15/15.

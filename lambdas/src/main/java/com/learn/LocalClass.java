@@ -17,7 +17,7 @@ public class LocalClass {
 
             String formattedPhoneNumber = null;
 
-            PhoneNumber(String phoneNumber){
+            PhoneNumber(String phoneNumber) {
                 // numberLength = 7;
                 String currentNumber = phoneNumber.replaceAll(
                         regularExpression, "");

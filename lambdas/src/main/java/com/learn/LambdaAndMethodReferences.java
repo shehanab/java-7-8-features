@@ -1,6 +1,5 @@
 package com.learn;
 
-import java.util.List;
 import java.util.stream.Stream;
 
 /**
@@ -14,7 +13,7 @@ public class LambdaAndMethodReferences {
         return stream.map(a -> Integer.valueOf(a));
     }
 
-    private Stream<Integer> WithMethodRef(){
+    private Stream<Integer> WithMethodRef() {
         return stream.map(this::toInt);
     }
 

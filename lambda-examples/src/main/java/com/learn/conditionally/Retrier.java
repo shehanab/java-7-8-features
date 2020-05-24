@@ -16,10 +16,6 @@ public class Retrier {
     public void init() {
         scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
     }
-    
-    public enum Status {
-        STOP, CONTINUE
-    }
 
     public void retry(Function<Integer, Status> callable, int times, long timeDelay, TimeUnit timeUnit) {
         retry(callable, times, times, timeDelay, timeUnit);
@@ -37,6 +33,10 @@ public class Retrier {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public enum Status {
+        STOP, CONTINUE
     }
 
     private static class Context {
